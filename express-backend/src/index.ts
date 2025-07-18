@@ -26,6 +26,10 @@ app.post("/submit", (req, res) => {
 	res.json({ message: "submission added to queue" });
 });
 
-app.listen(3000, () => {
-	console.log("server is running on port 3000");
-});
+try {
+	app.listen(3000, () => {
+		console.log("server is running on port 3000");
+	});
+} catch (error) {
+	console.log(error);
+}

@@ -18,6 +18,11 @@ app.post("/submit", (req, res) => {
     client.lpush("submissions", JSON.stringify({ problemId, userId, code, language }));
     res.json({ message: "submission added to queue" });
 });
-app.listen(3000, () => {
-    console.log("server is running on port 3000");
-});
+try {
+    app.listen(3000, () => {
+        console.log("server is running on port 3000");
+    });
+}
+catch (error) {
+    console.log(error);
+}
